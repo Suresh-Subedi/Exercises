@@ -1,19 +1,19 @@
 List<int[]> GetPossibleKnightMoves(int horizontal, int vertical) {
     var moves = new List<int[]>();
-    moves = GetPossibleKnightMovesHelper(moves, horizontal, vertical, 2, 1); 
-    moves = GetPossibleKnightMovesHelper(moves, horizontal, vertical, 2, -1);
-    moves = GetPossibleKnightMovesHelper(moves, horizontal, vertical, -2, 1);
-    moves = GetPossibleKnightMovesHelper(moves, horizontal, vertical, -2, -1);
+    moves = GetPossibleKnightMovesHelper(moves, horizontal + 2, vertical + 1); 
+    moves = GetPossibleKnightMovesHelper(moves, horizontal + 2, vertical - 1);
+    moves = GetPossibleKnightMovesHelper(moves, horizontal - 2, vertical + 1);
+    moves = GetPossibleKnightMovesHelper(moves, horizontal - 2, vertical + 1);
     
-    moves = GetPossibleKnightMovesHelper(moves, horizontal, vertical, 1, 2);
-    moves = GetPossibleKnightMovesHelper(moves, horizontal, vertical, 1, -2);
-    moves = GetPossibleKnightMovesHelper(moves, horizontal, vertical, -1, 2);
-    moves = GetPossibleKnightMovesHelper(moves, horizontal, vertical, -1, -2);
+    moves = GetPossibleKnightMovesHelper(moves, horizontal + 1, vertical + 2);
+    moves = GetPossibleKnightMovesHelper(moves, horizontal + 1, vertical - 2);
+    moves = GetPossibleKnightMovesHelper(moves, horizontal - 1, vertical + 2);
+    moves = GetPossibleKnightMovesHelper(moves, horizontal - 1, vertical - 2);
     return moves;
 }
 
-List<int[]> GetPossibleKnightMovesHelper(List<int[]> moves, int horizontal, int vertical, int x, int y) {
-    int[] position = new int[2] { horizontal + x, vertical + y };
+List<int[]> GetPossibleKnightMovesHelper(List<int[]> moves, int horizontal, int vertical) {
+    int[] position = new int[2] { horizontal, vertical};
     if(MoveIsValid(position[0], position[1])) {
         moves.Add(position);
     }
@@ -27,7 +27,7 @@ bool MoveIsValid(int horizontal, int vertical) {
     return false;
 }
 
-var positions = GetPossibleKnightMoves(4, 4);
-foreach(var position in positions) {
-    Console.WriteLine($"x: {position[0]}, y: {position[1]}");
+var moves = GetPossibleKnightMoves(1, 1);
+foreach(var move in moves) {
+    Console.WriteLine($"horizontal: {move[0]}, vertical: {move[1]}");
 }
