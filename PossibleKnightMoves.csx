@@ -4,7 +4,7 @@ List<Position> GetPossibleKnightMoves(int horizontal, int vertical) {
     moves = GetPossibleKnightMovesHelper(moves, horizontal + 2, vertical + 1);
     moves = GetPossibleKnightMovesHelper(moves, horizontal + 2, vertical - 1);
     moves = GetPossibleKnightMovesHelper(moves, horizontal - 2, vertical + 1);
-    moves = GetPossibleKnightMovesHelper(moves, horizontal - 2, vertical + 1);
+    moves = GetPossibleKnightMovesHelper(moves, horizontal - 2, vertical - 1);
     
     moves = GetPossibleKnightMovesHelper(moves, horizontal + 1, vertical + 2);
     moves = GetPossibleKnightMovesHelper(moves, horizontal + 1, vertical - 2);
