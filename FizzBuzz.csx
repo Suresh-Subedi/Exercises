@@ -1,9 +1,3 @@
-void FizzBuzzRange(int van, int tot) {
-    for(var i = van; i <= tot; i++) {
-        Console.WriteLine(FizzBuzz(i));
-   }
-}
-
 string FizzBuzz(int i) {
     string output = "";
     if(i % 3 == 0) {
@@ -18,8 +12,6 @@ string FizzBuzz(int i) {
     return output;
 }
 
-FizzBuzzRange(1, 100);
-
 void TestFizzBuzz(int number, string output) {
     if(FizzBuzz(number) != output) throw new Exception();
 }
@@ -28,3 +20,11 @@ TestFizzBuzz(1, "1");
 TestFizzBuzz(3, "Fizz");
 TestFizzBuzz(5, "Buzz");
 TestFizzBuzz(15, "FizzBuzz");
+
+void FizzBuzzRange(int van, int tot) {
+    for(var i = van; i <= tot; i++) {
+        Console.WriteLine(FizzBuzz(i));
+   }
+}
+
+FizzBuzzRange(1, 100);
