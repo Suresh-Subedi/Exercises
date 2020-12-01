@@ -5,7 +5,7 @@ public class Solution {
         var numCounts = new Dictionary<int, int>();
         foreach(var num in nums) {
             if(numCounts.ContainsKey(num)) {
-                numCounts[num] = numCounts[num] + 1;
+                numCounts[num] += 1;
             } else {
                 numCounts.Add(num, 1);
             }
