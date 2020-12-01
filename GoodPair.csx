@@ -1,7 +1,7 @@
 https://leetcode.com/problems/number-of-good-pairs
 
 public class Solution {
-    public int NumIdenticalPairs(int[] nums) {
+    public int NumIdenticalPairs1(int[] nums) {
         var numCounts = new Dictionary<int, int>();
         foreach(var num in nums) {
             if(numCounts.ContainsKey(num)) {
@@ -16,7 +16,21 @@ public class Solution {
             goodPairs += numCount.Value * (numCount.Value - 1)/2;
         }
         return goodPairs;
-    }    
+    }
+    
+    public int NumIdenticalPairs(int[] nums) {
+        var goodPairs = 0;
+        var numCounts = new Dictionary<int, int>();
+        foreach(var num in nums) {
+            if(numCounts.ContainsKey(num)) {
+                goodPairs += numCounts[num];
+                numCounts[num] += 1;
+            } else {
+                numCounts.Add(num, 1);
+            }
+        }
+        return goodPairs;
+    }
 }
 
 void TestNumIdenticalPairs(int[] input, int output) {
