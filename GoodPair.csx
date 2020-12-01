@@ -1,3 +1,5 @@
+https://leetcode.com/problems/number-of-good-pairs
+
 public class Solution {
     public int NumIdenticalPairs(int[] nums) {
         var numCounts = new Dictionary<int, int>();
